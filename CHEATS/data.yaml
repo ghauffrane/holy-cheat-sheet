@@ -1,0 +1,86 @@
+categories:
+  aws:
+  - code: 'import boto3
+
+
+      s3 = boto3.client(''s3'')
+
+      s3.create_bucket(Bucket=''my-bucket'')
+
+      '
+    title: AWS S3 Bucket Creation
+  - code: 'import boto3
+
+
+      lambda_client = boto3.client(''lambda'')
+
+      lambda_client.invoke(FunctionName=''my-function'', InvocationType=''Event'')
+
+      '
+    title: AWS Lambda Function Invocation
+  - code: "import boto3\n\nec2 = boto3.resource('ec2')\ninstance = ec2.create_instances(\n\
+      \    ImageId='ami-xxxxxxxx',\n    MinCount=1,\n    MaxCount=1,\n    InstanceType='t2.micro',\n\
+      \    KeyName='my-key-pair'\n)\n"
+    title: AWS EC2 Instance Creation
+  devops:
+  - code: "- name: Install Apache\n  hosts: webservers\n  become: true\n  tasks:\n\
+      \    - name: Install Apache\n      yum:\n        name: httpd\n        state:\
+      \ present\n"
+    title: Ansible Playbook Example
+  - code: "pipeline {\n  agent any\n  stages {\n    stage('Build') {\n      steps\
+      \ {\n        // Build steps\n      }\n    }\n    stage('Test') {\n      steps\
+      \ {\n        // Testing steps\n      }\n    }\n    stage('Deploy') {\n     \
+      \ steps {\n        // Deployment steps\n      }\n    }\n  }\n}\n"
+    title: Jenkins Pipeline Configuration
+  docker:
+  - code: 'FROM python:3
+
+      WORKDIR /app
+
+      COPY . /app
+
+      RUN pip install Flask
+
+      CMD ["python", "app.py"]
+
+      '
+    title: Dockerfile for Python Flask App
+  - code: "version: '3'\nservices:\n  web:\n    build: .\n    ports:\n      - \"5000:5000\"\
+      \n"
+    title: Docker Compose Example
+  elasticsearch:
+  - code: "GET /_search\n{\n  \"query\": {\n    \"match\": {\n      \"field\": \"\
+      value\"\n    }\n  }\n}\n"
+    title: Elasticsearch Query Example
+  - code: "PUT /my_index\n{\n  \"settings\": {\n    \"number_of_shards\": 1,\n   \
+      \ \"number_of_replicas\": 0\n}\n"
+    title: Elasticsearch Index Creation
+  - code: "POST /index_name/_delete_by_query\n{\n  \"query\": {\n    \"range\": {\"\
+      Date\":{\n      \"lt\": \"2023-12-27\"\n    }}\n  }\n  \n}"
+    title: Delete by query
+  linux:
+  - code: '#!/bin/bash
+
+      echo "Hello, Linux!"
+
+      '
+    title: Bash Scripting Example
+  - code: 'chmod +x my_script.sh
+
+      '
+    title: Linux File Permission Setting
+  sql:
+  - code: 'SELECT t1.column1, t2.column2
+
+      FROM table1 t1
+
+      INNER JOIN table2 t2 ON t1.id = t2.id
+
+      '
+    title: SQL JOIN Query Example
+  - code: 'INSERT INTO table_name (column1, column2)
+
+      VALUES (value1, value2)
+
+      '
+    title: SQL INSERT Statement
